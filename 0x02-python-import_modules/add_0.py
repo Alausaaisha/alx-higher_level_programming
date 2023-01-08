@@ -9,8 +9,4 @@ def add(a, b):
     Returns:
         The return value. a + b
     """
-    return (a + b)
-
-if __name__ == "__main__":
-    import sys
-    add(int(sys.argv[1]))
+    return (a+b)
