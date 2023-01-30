@@ -15,13 +15,15 @@ class Rectangle:
     def __str__(self):
         """this method prints the rectangle with the characeter #"""
 
+        rect = ''
         if self.__width == 0 or self.height == 0:
             return("")
         else:
-            for i in range(self.width):
-                for j in range(self.height):
-                    print("#", end='')
-                print()
+            for i in range(self.height):
+                for j in range(self.width):
+                    rect += '#'
+                rect += '\n'
+            return(rect)
 
     @property
     def width(self):
