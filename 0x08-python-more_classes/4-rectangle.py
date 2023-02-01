@@ -26,6 +26,12 @@ class Rectangle:
                     rect += '\n'
             return(rect)
 
+    def __repr__(self):
+        """this method returns a string representation of the
+        rectangle to be able to recreate a new instance by using eval()"""
+
+        return("Rectangle({}, {})".format(self.width, self.height))
+
     @property
     def width(self):
         """this method retrieves the value of the private instance
