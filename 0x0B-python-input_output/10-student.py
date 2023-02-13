@@ -25,5 +25,5 @@ class Student:
                 for key, value in self.__dict__.items():
                     if i == key:
                         new_dict[key] = value
-                        return(new_dict)
+            return(new_dict)
         return(self.__dict__)
