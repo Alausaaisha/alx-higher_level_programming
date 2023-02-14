@@ -91,12 +91,13 @@ class Rectangle(Base):
         """this methods prints in the stdout the Rectangle instance
         with the character #"""
 
-        if self.y > 0:
-            print('\n' * self.y, end='')
+        rect = ""
         for i in range(self.height):
-            if self.x > 0:
-                print(' ' * self.x, end='')
-            print("#" * self.width)
+            for j in range(self.width):
+                rect += '#'
+            if i < self.height - 1:
+                rect += '\n'
+        print(rect)
 
     def __str__(self):
         """this method overrides the inbuilt __str__"""
