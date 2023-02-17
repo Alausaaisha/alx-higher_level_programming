@@ -29,7 +29,8 @@ class Square(Rectangle):
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = value
+            self.__width = value
+            self.__height = value
 
     def __str__(self):
         """this method overrides the inbuilt __str__ method"""
