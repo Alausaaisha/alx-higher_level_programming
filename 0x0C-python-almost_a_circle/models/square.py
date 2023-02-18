@@ -43,7 +43,7 @@ class Square(Rectangle):
         """public method that assigns attributes"""
 
         if args:
-            for i in args:
+            for i in range(len(args)):
                 if i == 0:
                     self.id = args[i]
                 elif i == 1:
