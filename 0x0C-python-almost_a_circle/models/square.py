@@ -38,3 +38,27 @@ class Square(Rectangle):
                                                  self.x,
                                                  self.y,
                                                  self.size))
+
+    def update(self, *args, **kwargs):
+        """public method that assigns attributes"""
+
+        if args:
+            for i in args:
+                if i == 0:
+                    self.id = args[i]
+                elif i == 1:
+                    self.size = args[i]
+                elif i == 2:
+                    self.x = args[i]
+                elif i == 3:
+                    self.y = args[i]
+        else:
+            for key in kwargs:
+                if key == 'id':
+                    self.id = ['id']
+                elif key == 'size':
+                    self.size =['size']
+                elif key == 'x':
+                    self.x = ['x']
+                elif key == 'y':
+                    self.y = ['y']
