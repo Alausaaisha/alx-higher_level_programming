@@ -2,6 +2,6 @@
 -- in the table second_table
 
 SELECT score,
-	COUNT(score) AS "number"
+	COUNT(*) AS "number"
 FROM second_table
 GROUP BY score;
