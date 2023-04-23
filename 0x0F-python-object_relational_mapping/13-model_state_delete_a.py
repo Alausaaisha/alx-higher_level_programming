@@ -29,9 +29,10 @@ if __name__ == "__main__":
     session = Session()
 
     # query
-    state = session.query(State).all()
+    # state = session.query(State).all()
+    state = session.query(State).filter(State.name.like('%a%')).all()
     for s in state:
-        if 'a' in s.name:
+        # if 'a' in s.name:
             session.delete(s)
     session.commit()
     session.close()
