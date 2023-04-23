@@ -18,26 +18,27 @@ from sqlalchemy.orm import Session, sessionmaker
 
 
 # create connection
-engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                       .format(argv[1], argv[2], argv[3]))
+if __name__ == "__main__":
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(argv[1], argv[2], argv[3]))
 
-# create all tables in the metadata
-Base.metadata.create_all(engine)
+    # create all tables in the metadata
+    Base.metadata.create_all(engine)
 
-# create session
-Session = sessionmaker(bind=engine)
-session = Session()
+    # create session
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-# add new state object
-new_obj = State(name='Louisiana')
+    # add new state object
+    new_obj = State(name='Louisiana')
 
-session.add(new_obj)
-session.commit()
+    session.add(new_obj)
+    session.commit()
 
-# query
-state = session.query(State).filter_by(name='Louisiana').first()
-if state is not None:
-    print('{}'.format(state.id))
-else:
-    print('Not Found')
-session.close()
+    # query
+    state = session.query(State).filter_by(name='Louisiana').first()
+    if state is not None:
+        print('{}'.format(state.id))
+    else:
+        print('Not Found')
+    session.close()
