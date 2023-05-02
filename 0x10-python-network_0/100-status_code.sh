@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script sends a JSON POST request to a URL passed as the first argument, and displays the body of the response. Your script must send a POST request with the contents of a file, passed with the filename as the second argument of the script, in the body of the request. You have to use curl
-curl -d @$2 $1
+# This script sends a request to a URL passed as an argument, and displays only the status code of the response. You are not allowed to use any pipe, redirection, etc. You are not allowed to use ; and &&. You have to use curl
+curl -s -o /dev/null -w "%{http_code}" $1
