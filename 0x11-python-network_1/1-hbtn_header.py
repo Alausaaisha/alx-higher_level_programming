@@ -9,4 +9,4 @@ from sys import argv
 if __name__ == "__main__":
     with urlopen(argv[1]) as response:
         headers = response.info()
-        print(headers.get(X-Request-Id))
+        print(headers.get('X-Request-Id'))
