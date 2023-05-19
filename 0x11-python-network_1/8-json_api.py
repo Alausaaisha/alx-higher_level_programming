@@ -15,7 +15,8 @@ if __name__ == "__main__":
         if response_bodytype == 'application/json':
             json_content = eval(r.content)
             if json_content != {}:
-                print('[{}] {}'.format(json_content['id'], json_content['name']))
+                print('[{}] {}'.format(json_content['id'],
+                      json_content['name']))
             else:
                 print('No result')
         else:
